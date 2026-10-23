@@ -1,0 +1,49 @@
+[project]
+name = "finalproject-chechurov-m26-555"
+version = "0.1.0"
+description = "ValutaTrade Hub — консольный симулятор валютного кошелька"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "prettytable>=3.12,<4",
+]
+
+[project.scripts]
+valutatrade = "valutatrade_hub.cli.interface:main"
+
+[build-system]
+requires = ["hatchling>=1.27,<2"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["valutatrade_hub"]
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "/valutatrade_hub",
+    "/data",
+    "/main.py",
+    "/Makefile",
+    "/README.md",
+    "/pyproject.toml",
+    "/uv.lock",
+    "/.python-version",
+    "/.env.example",
+    "/.gitignore",
+]
+
+[tool.ruff]
+target-version = "py313"
+line-length = 88
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+
+[dependency-groups]
+dev = [
+    "ruff>=0.11,<1",
+]

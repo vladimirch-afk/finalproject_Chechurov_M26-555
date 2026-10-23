@@ -1,0 +1,29 @@
+# Python, окружения и результаты сборки.
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+.venv-uv/
+venv/
+build/
+dist/
+wheels/
+.ruff_cache/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Локальные настройки, секреты и журналы.
+.env
+.env.*
+!.env.example
+logs/
+data/.database.lock
+data/.transaction.json
+*.log
+*.tmp
+
+# Редакторы и ОС.
+.idea/
+.vscode/
+.DS_Store
